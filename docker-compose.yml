@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  todo_db:
+    image: postgres
+    container_name: todo_db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=todos
+    volumes:
+      - ./.docker/postgres/data:/var/lib/mysql
